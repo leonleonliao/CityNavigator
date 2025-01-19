@@ -10,6 +10,27 @@ import SwiftUI
 import MapKit
 import CoreLocation
 
+// 為了支持當前位置的功能，用於獲取並更新設備的當前位置
+class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
+    private let manager = CLLocationManager()
+    @Published var currentLocation: CLLocationCoordinate2D?
+    
+    override init() {
+        super.init()
+        manager.delegate = self
+        manager.desiredAccuracy = kCLLocationAccuracyBest
+        manager.requestWhenInUseAuthorization()
+        manager.startUpdatingLocation()
+    }
+
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        //currentLocation = locations.last?.coordinate
+        if let location = locations.last {
+              print("Current Location：\(location.coordinate.latitude), \(location.coordinate.longitude)")
+              currentLocation = location.coordinate
+          }
+    }
+}
 
 /// 主視圖
 struct LocationsView: View {
@@ -35,7 +56,10 @@ struct LocationsView: View {
     @State private var showDetailsSheet = false
     @State private var showEditSheet = false
     @State private var selectedIndex: Int? = nil // 儲存選中的地點索引
-
+    @StateObject private var locationManager = LocationManager()
+    @State private var showRoute = false
+    @State private var routeOverlay: MKPolyline? = nil
+    
     var body: some View {
         VStack {
             // 輸入框和按鈕，用於新增標記
@@ -55,16 +79,22 @@ struct LocationsView: View {
             // 地圖
             ZStack {
                 // 自定義 MapViewWrapper，用於處理點擊事件和標記操作
-                MapViewWrapper(region: $region, pointOfInterest: $pointOfInterest, nameStr: $nameStr, latStr: $latStr, lngStr: $lngStr, selectedAnnotation: $selectedAnnotation, showDeleteConfirmation: $showDeleteConfirmation, showEditSheet: $showEditSheet
+                MapViewWrapper(region: $region, pointOfInterest: $pointOfInterest, nameStr: $nameStr, latStr: $latStr, lngStr: $lngStr, selectedAnnotation: $selectedAnnotation, showDeleteConfirmation: $showDeleteConfirmation, showEditSheet: $showEditSheet, locationManager: locationManager, routeOverlay: $routeOverlay
                 )
+              /*  .onAppear {
+                    if let currentLocation = locationManager.currentLocation {
+                            region.center = currentLocation
+                    }
+                }
                 .edgesIgnoringSafeArea(.top)
-                .frame(height: 500)
+                .frame(height: 500)*/
                 // 放大與縮小按鈕
                 VStack {
                     Spacer()// 將按鈕置於底部
                     HStack {
-                        Spacer()// 將按鈕置於右側
+                        //Spacer()// 將按鈕置於右側
                         VStack(spacing: 10) {
+                            /*
                             Button(action: zoomIn) {
                                 Image(systemName: "plus.magnifyingglass")
                                     .font(.title)
@@ -83,12 +113,21 @@ struct LocationsView: View {
                                     .clipShape(Circle())
                                     .shadow(radius: 5)
                             }
+                             */
+                            //在卡片選擇後，顯示導航按鈕：
+                            if let index = selectedIndex {
+                                Button("Navigate to \(pointOfInterest[index].name)") {
+                                    startNavigation(to: pointOfInterest[index].coordinate)
+                                }
+                                .padding()
+                                .buttonStyle(.borderedProminent)
+                            }
                         }
                         .padding()
                     }
                 }
             }
-            
+
             // 橫向標記列表
             ScrollViewReader { proxy in
                 ScrollView(.horizontal, showsIndicators: false) {
@@ -100,12 +139,10 @@ struct LocationsView: View {
                                     .scaledToFit()
                                     .frame(height: 40)
                                     .padding(.bottom, 10)
-                                                                                
                                 Text(pointOfInterest[index].name)
                                     .font(.headline)
                                     .foregroundColor(.white)
                                     .padding(.bottom, 5)
-                                                                                
                                 Text(pointOfInterest[index].description)
                                     .font(.footnote)
                                     .foregroundColor(.white)
@@ -212,22 +249,69 @@ struct LocationsView: View {
         DispatchQueue.main.async {
             region = MKCoordinateRegion(
                 center: adjustedCenter,
+                //center: annotation.coordinate,
                 span: MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02) // 放大地图
             )
         }
+        if let currentLocation = locationManager.currentLocation {
+            drawRoute(from: currentLocation, to: annotation.coordinate)
+        }
     }
     
+    //繪製路線 draw Route
+    private func drawRoute(from start: CLLocationCoordinate2D, to destination: CLLocationCoordinate2D) {
+        let request = MKDirections.Request()
+        request.source = MKMapItem(placemark: MKPlacemark(coordinate: start))
+        request.destination = MKMapItem(placemark: MKPlacemark(coordinate: destination))
+        request.transportType = .automobile // 設置交通方式為駕車
+            
+        let directions = MKDirections(request: request)
+        directions.calculate { response, error in
+            if let error = error {
+                print("Failed to calculate route: \(error.localizedDescription)")
+                return
+            }
+            guard let route = response?.routes.first else {
+                print("Failed to calculate route: \(error?.localizedDescription ?? "Unknown error")")
+                    return
+            }
+                
+            DispatchQueue.main.async {
+                // 清理舊路線
+                routeOverlay = nil
+                // 添加新路線
+                routeOverlay = route.polyline
+                showRoute = true
+            }
+        }
+    }
+    
+    //開始導航 Start Navigation
+    private func startNavigation(to destination: CLLocationCoordinate2D) {
+        guard let currentLocation = locationManager.currentLocation else { return }
+            
+        let source = MKMapItem(placemark: MKPlacemark(coordinate: currentLocation))
+        let destination = MKMapItem(placemark: MKPlacemark(coordinate: destination))
+            destination.name = "Destination"
+            
+        MKMapItem.openMaps(with: [source, destination], launchOptions: [
+                MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving
+        ])
+    }
+    
+    
     /// 放大地圖
-       private func zoomIn() {
-           region.span.latitudeDelta /= 2
-           region.span.longitudeDelta /= 2
-       }
+    private func zoomIn() {
+        region.span.latitudeDelta /= 2
+        region.span.longitudeDelta /= 2
+    }
        
-       /// 縮小地圖
-       private func zoomOut() {
-           region.span.latitudeDelta = min(region.span.latitudeDelta * 2, 180) // 避免超出地圖緯度範圍
-           region.span.longitudeDelta = min(region.span.longitudeDelta * 2, 360) // 避免超出地圖經度範圍
-       }
+    /// 縮小地圖
+    private func zoomOut() {
+        region.span.latitudeDelta = min(region.span.latitudeDelta * 2, 180) // 避免超出地圖緯度範圍
+        region.span.longitudeDelta = min(region.span.longitudeDelta * 2, 360) // 避免超出地圖經度範圍
+    }
+    
     
     
     
@@ -278,6 +362,9 @@ struct MapViewWrapper: UIViewRepresentable {
     @Binding var selectedAnnotation: AnnotatedItem?
     @Binding var showDeleteConfirmation: Bool
     @Binding var showEditSheet: Bool
+    var locationManager: LocationManager
+    @Binding var routeOverlay: MKPolyline?
+    
     
     class Coordinator: NSObject, MKMapViewDelegate {
         var parent: MapViewWrapper
@@ -304,7 +391,6 @@ struct MapViewWrapper: UIViewRepresentable {
                     $0.coordinate.latitude == annotation.coordinate.latitude &&
                     $0.coordinate.longitude == annotation.coordinate.longitude
             }) else { return }
-                    
             // 彈出選項（編輯或刪除）
             parent.selectedAnnotation = matchedAnnotation
             parent.showDeleteConfirmation = true
@@ -314,24 +400,26 @@ struct MapViewWrapper: UIViewRepresentable {
     
     func makeCoordinator() -> Coordinator {
         //return
-        Coordinator(parent: self)
+        return Coordinator(parent: self)
     }
     
     func makeUIView(context: Context) -> MKMapView {
         let mapView = MKMapView()
         mapView.delegate = context.coordinator
-        
+        mapView.showsUserLocation = true //顯示藍色當前位置標記
         // 設置初始區域
-        mapView.setRegion(region, animated: false)
+        //mapView.setRegion(region, animated: false)
+        mapView.setRegion(region, animated: true)
         
         // 禁用 3D 地图和地形渲染
-        mapView.showsBuildings = false
-        mapView.showsCompass = false
-        mapView.showsScale = false
-        mapView.isRotateEnabled = false
-        mapView.isPitchEnabled = false
+        //mapView.showsBuildings = false
+        //mapView.showsCompass = false
+        //mapView.showsScale = false
+        //mapView.isRotateEnabled = false
+        //mapView.isPitchEnabled = false
         
         mapView.mapType = .standard // 可尝试切换为 .satellite 或 .hybrid
+
         
         // 添加點擊手勢
         let tapGesture = UITapGestureRecognizer(target: context.coordinator, action: #selector(Coordinator.handleMapTap(_:)))
@@ -369,6 +457,31 @@ struct MapViewWrapper: UIViewRepresentable {
             return annotation
         }
         uiView.addAnnotations(annotations)
+        
+        // 顯示當前位置
+        /*
+        if let currentLocation = locationManager.currentLocation {
+            let userAnnotation = MKPointAnnotation()
+            userAnnotation.title = "Current Location"
+            userAnnotation.coordinate = currentLocation
+            // 移除舊的當前位置標記，避免重複
+            uiView.annotations.forEach { annotation in
+                if annotation.title == "Current Location" {
+                    uiView.removeAnnotation(annotation)
+                }
+            }
+            uiView.setCenter(currentLocation, animated: true)
+            uiView.addAnnotation(userAnnotation)
+        }*/
+        
+        // 清理舊的路徑
+        if let existingOverlay = routeOverlay {
+            uiView.removeOverlay(existingOverlay)
+        }
+        // 添加新的路徑
+        if let routeOverlay = routeOverlay {
+            uiView.addOverlay(routeOverlay)
+        }
     }
 }
 
