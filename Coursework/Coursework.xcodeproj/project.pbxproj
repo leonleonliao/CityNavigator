@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		E59535962D3CB30C0071BD77 /* LocationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59535952D3CB30C0071BD77 /* LocationsView.swift */; };
 		E59535982D3CB9E50071BD77 /* AnnotatedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59535972D3CB9E50071BD77 /* AnnotatedItem.swift */; };
+		E595359B2D3F07470071BD77 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E595359A2D3F07470071BD77 /* AccountView.swift */; };
+		E595359F2D40720D0071BD77 /* LocationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E595359E2D40720D0071BD77 /* LocationsManager.swift */; };
 		E5B33D1A2D302CC200D37746 /* CourseworkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B33D192D302CC200D37746 /* CourseworkApp.swift */; };
 		E5B33D1C2D302CC200D37746 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B33D1B2D302CC200D37746 /* ContentView.swift */; };
 		E5B33D1E2D302CC300D37746 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5B33D1D2D302CC300D37746 /* Assets.xcassets */; };
@@ -19,6 +21,8 @@
 		E59535952D3CB30C0071BD77 /* LocationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsView.swift; sourceTree = "<group>"; };
 		E59535972D3CB9E50071BD77 /* AnnotatedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotatedItem.swift; sourceTree = "<group>"; };
 		E59535992D3CE4F30071BD77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		E595359A2D3F07470071BD77 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		E595359E2D40720D0071BD77 /* LocationsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsManager.swift; sourceTree = "<group>"; };
 		E5B33D162D302CC200D37746 /* Coursework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coursework.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5B33D192D302CC200D37746 /* CourseworkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseworkApp.swift; sourceTree = "<group>"; };
 		E5B33D1B2D302CC200D37746 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -58,8 +62,10 @@
 			children = (
 				E59535992D3CE4F30071BD77 /* Info.plist */,
 				E5B33D192D302CC200D37746 /* CourseworkApp.swift */,
+				E595359E2D40720D0071BD77 /* LocationsManager.swift */,
 				E59535972D3CB9E50071BD77 /* AnnotatedItem.swift */,
 				E59535952D3CB30C0071BD77 /* LocationsView.swift */,
+				E595359A2D3F07470071BD77 /* AccountView.swift */,
 				E5B33D1B2D302CC200D37746 /* ContentView.swift */,
 				E5B33D1D2D302CC300D37746 /* Assets.xcassets */,
 				E5B33D1F2D302CC300D37746 /* Preview Content */,
@@ -147,8 +153,10 @@
 			files = (
 				E59535962D3CB30C0071BD77 /* LocationsView.swift in Sources */,
 				E5B33D1C2D302CC200D37746 /* ContentView.swift in Sources */,
+				E595359F2D40720D0071BD77 /* LocationsManager.swift in Sources */,
 				E5B33D1A2D302CC200D37746 /* CourseworkApp.swift in Sources */,
 				E59535982D3CB9E50071BD77 /* AnnotatedItem.swift in Sources */,
+				E595359B2D3F07470071BD77 /* AccountView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +296,7 @@
 				INFOPLIST_FILE = Coursework/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "";
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
@@ -323,6 +332,7 @@
 				INFOPLIST_FILE = Coursework/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "";
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
