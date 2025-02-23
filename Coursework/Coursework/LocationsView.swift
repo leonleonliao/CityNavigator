@@ -207,6 +207,7 @@ struct LocationsView: View {
                             .onTapGesture {
                                 selectedIndex = index // 更新选中的卡片索引
                                 selectedAnnotation = locationsManager.savedLocations[index] // 更新選中的標記
+                                locationsManager.selectedLocation = locationsManager.savedLocations[index].coordinate // 設置選中地點
                                 focusOnAnnotation(locationsManager.savedLocations[index]) // 更新地图位置,聚焦到選中的地點
                             }
                             .animation(.spring(), value: selectedIndex)
@@ -452,6 +453,7 @@ struct MapViewWrapper: UIViewRepresentable {
             parent.latStr = String(format: "%.6f", coordinate.latitude)
             parent.lngStr = String(format: "%.6f", coordinate.longitude)
             parent.nameStr = "New Point"
+            
         }
         /// 處理標記點擊事件
         func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {

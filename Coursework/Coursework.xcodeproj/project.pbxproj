@@ -15,7 +15,41 @@
 		E5B33D1C2D302CC200D37746 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B33D1B2D302CC200D37746 /* ContentView.swift */; };
 		E5B33D1E2D302CC300D37746 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5B33D1D2D302CC300D37746 /* Assets.xcassets */; };
 		E5B33D212D302CC300D37746 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5B33D202D302CC300D37746 /* Preview Assets.xcassets */; };
+		E5D9C65A2D6A520000C98399 /* NearbyLocationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D9C6592D6A520000C98399 /* NearbyLocationsView.swift */; };
+		E5D9C6612D6ACA6C00C98399 /* GoogleMaps in Frameworks */ = {isa = PBXBuildFile; productRef = E5D9C6602D6ACA6C00C98399 /* GoogleMaps */; };
+		E5D9C6632D6ADC6E00C98399 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D9C6622D6ADC6E00C98399 /* WeatherView.swift */; };
+		E5D9C6652D6ADCC200C98399 /* AIDetectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D9C6642D6ADCC200C98399 /* AIDetectView.swift */; };
+		E5D9C6672D6ADD9500C98399 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D9C6662D6ADD9500C98399 /* ImagePicker.swift */; };
+		E5D9C66F2D6AE1E800C98399 /* LandmarkClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E5D9C66E2D6AE1E800C98399 /* LandmarkClassifier.mlmodel */; };
+		E5D9C6732D6AEFCE00C98399 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D9C6722D6AEFCE00C98399 /* CameraView.swift */; };
+		E5D9C6792D6B09DE00C98399 /* GoogleMaps in Frameworks */ = {isa = PBXBuildFile; productRef = E5D9C6782D6B09DE00C98399 /* GoogleMaps */; };
+		E5D9C67B2D6B09FF00C98399 /* GoogleMaps in Frameworks */ = {isa = PBXBuildFile; productRef = E5D9C67A2D6B09FF00C98399 /* GoogleMaps */; };
+		E5D9C67D2D6B0A3300C98399 /* GoogleMaps in Frameworks */ = {isa = PBXBuildFile; productRef = E5D9C67C2D6B0A3300C98399 /* GoogleMaps */; };
+		E5D9C6802D6B0ABA00C98399 /* GooglePlaces in Frameworks */ = {isa = PBXBuildFile; productRef = E5D9C67F2D6B0ABA00C98399 /* GooglePlaces */; };
+		E5D9C6822D6B0ABA00C98399 /* GooglePlacesSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E5D9C6812D6B0ABA00C98399 /* GooglePlacesSwift */; };
+		E5D9C6842D6B0AF600C98399 /* GooglePlaces in Frameworks */ = {isa = PBXBuildFile; productRef = E5D9C6832D6B0AF600C98399 /* GooglePlaces */; };
+		E5D9C6862D6B0AF600C98399 /* GooglePlacesSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E5D9C6852D6B0AF600C98399 /* GooglePlacesSwift */; };
+		E5D9C6982D6B21BA00C98399 /* CourseworkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D9C6972D6B21BA00C98399 /* CourseworkUITests.swift */; };
+		E5D9C69A2D6B21BA00C98399 /* CourseworkUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D9C6992D6B21BA00C98399 /* CourseworkUITestsLaunchTests.swift */; };
+		E5D9C6A72D6B21E700C98399 /* CourseworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D9C6A62D6B21E700C98399 /* CourseworkTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E5D9C69B2D6B21BA00C98399 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E5B33D0E2D302CC200D37746 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E5B33D152D302CC200D37746;
+			remoteInfo = Coursework;
+		};
+		E5D9C6A82D6B21E700C98399 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E5B33D0E2D302CC200D37746 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E5B33D152D302CC200D37746;
+			remoteInfo = Coursework;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		E59535952D3CB30C0071BD77 /* LocationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsView.swift; sourceTree = "<group>"; };
@@ -28,10 +62,43 @@
 		E5B33D1B2D302CC200D37746 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E5B33D1D2D302CC300D37746 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E5B33D202D302CC300D37746 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E5D9C6592D6A520000C98399 /* NearbyLocationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyLocationsView.swift; sourceTree = "<group>"; };
+		E5D9C6622D6ADC6E00C98399 /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
+		E5D9C6642D6ADCC200C98399 /* AIDetectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIDetectView.swift; sourceTree = "<group>"; };
+		E5D9C6662D6ADD9500C98399 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		E5D9C66E2D6AE1E800C98399 /* LandmarkClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = LandmarkClassifier.mlmodel; path = ../../../../../../../../.Trash/LandmarkClassifier.mlmodel; sourceTree = "<group>"; };
+		E5D9C6722D6AEFCE00C98399 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		E5D9C6952D6B21BA00C98399 /* CourseworkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CourseworkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5D9C6972D6B21BA00C98399 /* CourseworkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseworkUITests.swift; sourceTree = "<group>"; };
+		E5D9C6992D6B21BA00C98399 /* CourseworkUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseworkUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E5D9C6A42D6B21E700C98399 /* CourseworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CourseworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5D9C6A62D6B21E700C98399 /* CourseworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseworkTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		E5B33D132D302CC200D37746 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E5D9C67D2D6B0A3300C98399 /* GoogleMaps in Frameworks */,
+				E5D9C6792D6B09DE00C98399 /* GoogleMaps in Frameworks */,
+				E5D9C6842D6B0AF600C98399 /* GooglePlaces in Frameworks */,
+				E5D9C6862D6B0AF600C98399 /* GooglePlacesSwift in Frameworks */,
+				E5D9C6612D6ACA6C00C98399 /* GoogleMaps in Frameworks */,
+				E5D9C6802D6B0ABA00C98399 /* GooglePlaces in Frameworks */,
+				E5D9C67B2D6B09FF00C98399 /* GoogleMaps in Frameworks */,
+				E5D9C6822D6B0ABA00C98399 /* GooglePlacesSwift in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E5D9C6922D6B21BA00C98399 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E5D9C6A12D6B21E700C98399 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -45,6 +112,8 @@
 			isa = PBXGroup;
 			children = (
 				E5B33D182D302CC200D37746 /* Coursework */,
+				E5D9C6962D6B21BA00C98399 /* CourseworkUITests */,
+				E5D9C6A52D6B21E700C98399 /* CourseworkTests */,
 				E5B33D172D302CC200D37746 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -53,6 +122,8 @@
 			isa = PBXGroup;
 			children = (
 				E5B33D162D302CC200D37746 /* Coursework.app */,
+				E5D9C6952D6B21BA00C98399 /* CourseworkUITests.xctest */,
+				E5D9C6A42D6B21E700C98399 /* CourseworkTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -62,11 +133,17 @@
 			children = (
 				E59535992D3CE4F30071BD77 /* Info.plist */,
 				E5B33D192D302CC200D37746 /* CourseworkApp.swift */,
+				E5B33D1B2D302CC200D37746 /* ContentView.swift */,
 				E595359E2D40720D0071BD77 /* LocationsManager.swift */,
 				E59535972D3CB9E50071BD77 /* AnnotatedItem.swift */,
 				E59535952D3CB30C0071BD77 /* LocationsView.swift */,
 				E595359A2D3F07470071BD77 /* AccountView.swift */,
-				E5B33D1B2D302CC200D37746 /* ContentView.swift */,
+				E5D9C6592D6A520000C98399 /* NearbyLocationsView.swift */,
+				E5D9C6622D6ADC6E00C98399 /* WeatherView.swift */,
+				E5D9C6642D6ADCC200C98399 /* AIDetectView.swift */,
+				E5D9C6722D6AEFCE00C98399 /* CameraView.swift */,
+				E5D9C6662D6ADD9500C98399 /* ImagePicker.swift */,
+				E5D9C66E2D6AE1E800C98399 /* LandmarkClassifier.mlmodel */,
 				E5B33D1D2D302CC300D37746 /* Assets.xcassets */,
 				E5B33D1F2D302CC300D37746 /* Preview Content */,
 			);
@@ -79,6 +156,23 @@
 				E5B33D202D302CC300D37746 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E5D9C6962D6B21BA00C98399 /* CourseworkUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E5D9C6972D6B21BA00C98399 /* CourseworkUITests.swift */,
+				E5D9C6992D6B21BA00C98399 /* CourseworkUITestsLaunchTests.swift */,
+			);
+			path = CourseworkUITests;
+			sourceTree = "<group>";
+		};
+		E5D9C6A52D6B21E700C98399 /* CourseworkTests */ = {
+			isa = PBXGroup;
+			children = (
+				E5D9C6A62D6B21E700C98399 /* CourseworkTests.swift */,
+			);
+			path = CourseworkTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -97,9 +191,55 @@
 			dependencies = (
 			);
 			name = Coursework;
+			packageProductDependencies = (
+				E5D9C6602D6ACA6C00C98399 /* GoogleMaps */,
+				E5D9C6782D6B09DE00C98399 /* GoogleMaps */,
+				E5D9C67A2D6B09FF00C98399 /* GoogleMaps */,
+				E5D9C67C2D6B0A3300C98399 /* GoogleMaps */,
+				E5D9C67F2D6B0ABA00C98399 /* GooglePlaces */,
+				E5D9C6812D6B0ABA00C98399 /* GooglePlacesSwift */,
+				E5D9C6832D6B0AF600C98399 /* GooglePlaces */,
+				E5D9C6852D6B0AF600C98399 /* GooglePlacesSwift */,
+			);
 			productName = Coursework;
 			productReference = E5B33D162D302CC200D37746 /* Coursework.app */;
 			productType = "com.apple.product-type.application";
+		};
+		E5D9C6942D6B21BA00C98399 /* CourseworkUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E5D9C69D2D6B21BA00C98399 /* Build configuration list for PBXNativeTarget "CourseworkUITests" */;
+			buildPhases = (
+				E5D9C6912D6B21BA00C98399 /* Sources */,
+				E5D9C6922D6B21BA00C98399 /* Frameworks */,
+				E5D9C6932D6B21BA00C98399 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E5D9C69C2D6B21BA00C98399 /* PBXTargetDependency */,
+			);
+			name = CourseworkUITests;
+			productName = CourseworkUITests;
+			productReference = E5D9C6952D6B21BA00C98399 /* CourseworkUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		E5D9C6A32D6B21E700C98399 /* CourseworkTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E5D9C6AA2D6B21E700C98399 /* Build configuration list for PBXNativeTarget "CourseworkTests" */;
+			buildPhases = (
+				E5D9C6A02D6B21E700C98399 /* Sources */,
+				E5D9C6A12D6B21E700C98399 /* Frameworks */,
+				E5D9C6A22D6B21E700C98399 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E5D9C6A92D6B21E700C98399 /* PBXTargetDependency */,
+			);
+			name = CourseworkTests;
+			productName = CourseworkTests;
+			productReference = E5D9C6A42D6B21E700C98399 /* CourseworkTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -114,6 +254,14 @@
 					E5B33D152D302CC200D37746 = {
 						CreatedOnToolsVersion = 15.0;
 					};
+					E5D9C6942D6B21BA00C98399 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = E5B33D152D302CC200D37746;
+					};
+					E5D9C6A32D6B21E700C98399 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = E5B33D152D302CC200D37746;
+					};
 				};
 			};
 			buildConfigurationList = E5B33D112D302CC200D37746 /* Build configuration list for PBXProject "Coursework" */;
@@ -125,11 +273,17 @@
 				Base,
 			);
 			mainGroup = E5B33D0D2D302CC200D37746;
+			packageReferences = (
+				E5D9C65F2D6ACA6C00C98399 /* XCRemoteSwiftPackageReference "ios-maps-sdk" */,
+				E5D9C67E2D6B0ABA00C98399 /* XCRemoteSwiftPackageReference "ios-places-sdk" */,
+			);
 			productRefGroup = E5B33D172D302CC200D37746 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				E5B33D152D302CC200D37746 /* Coursework */,
+				E5D9C6942D6B21BA00C98399 /* CourseworkUITests */,
+				E5D9C6A32D6B21E700C98399 /* CourseworkTests */,
 			);
 		};
 /* End PBXProject section */
@@ -144,6 +298,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E5D9C6932D6B21BA00C98399 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E5D9C6A22D6B21E700C98399 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -151,16 +319,52 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5D9C6672D6ADD9500C98399 /* ImagePicker.swift in Sources */,
+				E5D9C66F2D6AE1E800C98399 /* LandmarkClassifier.mlmodel in Sources */,
+				E5D9C6632D6ADC6E00C98399 /* WeatherView.swift in Sources */,
+				E5D9C6732D6AEFCE00C98399 /* CameraView.swift in Sources */,
 				E59535962D3CB30C0071BD77 /* LocationsView.swift in Sources */,
 				E5B33D1C2D302CC200D37746 /* ContentView.swift in Sources */,
 				E595359F2D40720D0071BD77 /* LocationsManager.swift in Sources */,
+				E5D9C65A2D6A520000C98399 /* NearbyLocationsView.swift in Sources */,
 				E5B33D1A2D302CC200D37746 /* CourseworkApp.swift in Sources */,
 				E59535982D3CB9E50071BD77 /* AnnotatedItem.swift in Sources */,
 				E595359B2D3F07470071BD77 /* AccountView.swift in Sources */,
+				E5D9C6652D6ADCC200C98399 /* AIDetectView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E5D9C6912D6B21BA00C98399 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E5D9C69A2D6B21BA00C98399 /* CourseworkUITestsLaunchTests.swift in Sources */,
+				E5D9C6982D6B21BA00C98399 /* CourseworkUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E5D9C6A02D6B21E700C98399 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E5D9C6A72D6B21E700C98399 /* CourseworkTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E5D9C69C2D6B21BA00C98399 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E5B33D152D302CC200D37746 /* Coursework */;
+			targetProxy = E5D9C69B2D6B21BA00C98399 /* PBXContainerItemProxy */;
+		};
+		E5D9C6A92D6B21E700C98399 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E5B33D152D302CC200D37746 /* Coursework */;
+			targetProxy = E5D9C6A82D6B21E700C98399 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		E5B33D222D302CC300D37746 /* Debug */ = {
@@ -296,6 +500,7 @@
 				INFOPLIST_FILE = Coursework/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "";
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need access to your camera for real-time landmark detection.";
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "";
@@ -332,6 +537,7 @@
 				INFOPLIST_FILE = Coursework/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "";
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need access to your camera for real-time landmark detection.";
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "";
@@ -351,6 +557,76 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E5D9C69E2D6B21BA00C98399 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2JX3SG5E65;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "-.CourseworkUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Coursework;
+			};
+			name = Debug;
+		};
+		E5D9C69F2D6B21BA00C98399 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2JX3SG5E65;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "-.CourseworkUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Coursework;
+			};
+			name = Release;
+		};
+		E5D9C6AB2D6B21E700C98399 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2JX3SG5E65;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "-.CourseworkTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Coursework.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Coursework";
+			};
+			name = Debug;
+		};
+		E5D9C6AC2D6B21E700C98399 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2JX3SG5E65;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "-.CourseworkTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Coursework.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Coursework";
 			};
 			name = Release;
 		};
@@ -375,7 +651,87 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		E5D9C69D2D6B21BA00C98399 /* Build configuration list for PBXNativeTarget "CourseworkUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E5D9C69E2D6B21BA00C98399 /* Debug */,
+				E5D9C69F2D6B21BA00C98399 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E5D9C6AA2D6B21E700C98399 /* Build configuration list for PBXNativeTarget "CourseworkTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E5D9C6AB2D6B21E700C98399 /* Debug */,
+				E5D9C6AC2D6B21E700C98399 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E5D9C65F2D6ACA6C00C98399 /* XCRemoteSwiftPackageReference "ios-maps-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googlemaps/ios-maps-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.3.0;
+			};
+		};
+		E5D9C67E2D6B0ABA00C98399 /* XCRemoteSwiftPackageReference "ios-places-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googlemaps/ios-places-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E5D9C6602D6ACA6C00C98399 /* GoogleMaps */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E5D9C65F2D6ACA6C00C98399 /* XCRemoteSwiftPackageReference "ios-maps-sdk" */;
+			productName = GoogleMaps;
+		};
+		E5D9C6782D6B09DE00C98399 /* GoogleMaps */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E5D9C65F2D6ACA6C00C98399 /* XCRemoteSwiftPackageReference "ios-maps-sdk" */;
+			productName = GoogleMaps;
+		};
+		E5D9C67A2D6B09FF00C98399 /* GoogleMaps */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E5D9C65F2D6ACA6C00C98399 /* XCRemoteSwiftPackageReference "ios-maps-sdk" */;
+			productName = GoogleMaps;
+		};
+		E5D9C67C2D6B0A3300C98399 /* GoogleMaps */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E5D9C65F2D6ACA6C00C98399 /* XCRemoteSwiftPackageReference "ios-maps-sdk" */;
+			productName = GoogleMaps;
+		};
+		E5D9C67F2D6B0ABA00C98399 /* GooglePlaces */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E5D9C67E2D6B0ABA00C98399 /* XCRemoteSwiftPackageReference "ios-places-sdk" */;
+			productName = GooglePlaces;
+		};
+		E5D9C6812D6B0ABA00C98399 /* GooglePlacesSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E5D9C67E2D6B0ABA00C98399 /* XCRemoteSwiftPackageReference "ios-places-sdk" */;
+			productName = GooglePlacesSwift;
+		};
+		E5D9C6832D6B0AF600C98399 /* GooglePlaces */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E5D9C67E2D6B0ABA00C98399 /* XCRemoteSwiftPackageReference "ios-places-sdk" */;
+			productName = GooglePlaces;
+		};
+		E5D9C6852D6B0AF600C98399 /* GooglePlacesSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E5D9C67E2D6B0ABA00C98399 /* XCRemoteSwiftPackageReference "ios-places-sdk" */;
+			productName = GooglePlacesSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E5B33D0E2D302CC200D37746 /* Project object */;
 }

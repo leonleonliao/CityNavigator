@@ -67,10 +67,12 @@ struct AccountView: View {
                         .textFieldStyle(.roundedBorder)
                         .autocapitalization(.none)
                         .padding(.bottom)
+                        .accessibilityIdentifier("Username") // Add this line
 
                     SecureField("Password", text: $password)
                         .textFieldStyle(.roundedBorder)
                         .padding(.bottom)
+                        .accessibilityIdentifier("Password") // Add this line
 
                     if isRegistering {
                         Button("Register") {
@@ -84,6 +86,7 @@ struct AccountView: View {
                         }
                         .buttonStyle(.borderedProminent)
                         .padding(.bottom)
+                        .accessibilityIdentifier("Login") // Add this line
 
                         Button("Login with Face ID / Touch ID") {
                             authenticateWithBiometrics()

@@ -10,6 +10,7 @@ import CoreLocation
 
 class LocationsManager: ObservableObject {
     @Published var savedLocations: [AnnotatedItem] = [] // 保存的地點列表
+    @Published var selectedLocation: CLLocationCoordinate2D? = nil // 用於導航的選中地點
     private let staticLocations: [AnnotatedItem] // 靜態地點列表
     private var userDefaultsKey: String = ""// 當前用戶的唯一鍵
 

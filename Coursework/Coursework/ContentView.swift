@@ -22,17 +22,48 @@ struct ContentView: View {
                 .tag(0)
                 .environmentObject(locationsManager) // 傳遞共享的數據模型
 
+            // Weather Tab
+                        WeatherView()
+                            .tabItem {
+                                Image(systemName: "cloud.fill")
+                                Text("Weather")
+                            }
+                            .tag(1)
+                            .environmentObject(locationsManager) // 傳遞共享的數據模型
+            
+            // Nearby Locations Tab
+                        NearbyLocationsView()
+                            .tabItem {
+                                Image(systemName: "magnifyingglass")
+                                Text("Nearby")
+                            }
+                            .tag(2)
+                            .environmentObject(locationsManager) // 傳遞共享的數據模型
+            
+
+  
+            // AI Detect Tab
+                        AIDetectView()
+                            .tabItem {
+                                Image(systemName: "camera.viewfinder")
+                                Text("AI Detect")
+                            }
+                            .tag(3)
+                            .environmentObject(locationsManager) // 傳遞共享的數據模型
+           
             // AccountView 獲取共享的 LocationsManager
             AccountView()
                 .tabItem {
-                    Image(systemName: "globe")
+                    Image(systemName: "person.fill")
                     Text("Account")
                 }
-                .tag(1)
+                .tag(4)
                 .environmentObject(locationsManager) // 傳遞共享的數據模型
         }
     }
 }
+
+
 
 
 struct ContentView_Previews: PreviewProvider {
